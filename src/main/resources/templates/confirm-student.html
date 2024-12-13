@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Confirmação de Cadastro</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Confirmação de Cadastro</h1>
+        <p>Nome: <span th:text="${student.nome}"></span></p>
+        <p>Data de Nascimento: <span th:text="${student.dataNascimento}"></span></p>
+        <p>CEP: <span th:text="${student.cep}"></span></p>
+        <p>Cidade: <span th:text="${student.cidade}"></span></p>
+        <p>Curso: <span th:text="${student.curso}"></span></p>
+
+        <form th:action="@{/students/confirm}" method="post">
+            <button type="submit">Confirmar</button>
+        </form>
+        <form th:action="@{/students/cancel}" method="post">
+            <button type="submit">Cancelar</button>
+        </form>
+        <form th:action="@{/students/edit}" method="get">
+            <button type="submit">Editar</button>
+        </form>
+    </body>
+</html>
